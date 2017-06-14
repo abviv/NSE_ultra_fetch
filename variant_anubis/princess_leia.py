@@ -154,7 +154,6 @@ def Unzipper(unzip_directory):
 
 
 def Full_Clean():
-	#directory = ["/home/codesmith/projects/scrapping/alchemy_scrape/OI/","/home/codesmith/projects/scrapping/alchemy_scrape/BHAV_CPY/","/home/codesmith/projects/scrapping/alchemy_scrape/VOLATILITY/"]
 	directory =[directory_to_bhav,directory_to_vol,directory_to_oi]  		#directory_to_bhav,directory_to_vol,
 	#print directory[0]
 	for i in range(len(directory)):
@@ -191,8 +190,8 @@ def Godzilla():
 		Groupping()	
 
 
-schedule.every().day.at("22:18").do(Godzilla)
-schedule.every().day.at("22:19").do(Bitch_Pls_Trigger)	###SCHEDULER CALLS ALL THIS FUNCTION AT THE PREDEFINED TIME https://schedule.readthedocs.io/en/stable/
+schedule.every().day.at("19:30").do(Godzilla)
+schedule.every().day.at("19:31").do(Bitch_Pls_Trigger)	###SCHEDULER CALLS ALL THIS FUNCTION AT THE PREDEFINED TIME https://schedule.readthedocs.io/en/stable/
 
 
 
