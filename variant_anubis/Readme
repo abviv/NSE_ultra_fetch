@@ -1,10 +1,15 @@
-code for pulling and processing data at a specific time 
+=======Variant Anubis=========
 
-full automation 
+--->code for pulling and processing data at a specific time 
 
-run it in server
+--->full automation 
 
-may  create problems on saturdays and sundays since i haven't created an exception to deal with it 
+--->run it on a server and enjoy the sweet smell of automation
+
+--->may create problems on saturdays and sundays since i haven't created an exception to deal with it 
 
 
-run princess_leia.py first 
+
+                   ******run princess_leia.py first******
+        
+        ++++++++make sure both the .py files are on the same folder before knocking leia out+++++++
