@@ -1,5 +1,5 @@
-"""__main__production__code   Princess Leia, i have no idea why i named it. Following code pulls the data from NSE which is EOD data.
-						------------------pulls  data------------------ 
+"""__main__production__code   Princess Leia, i have no idea why i named it. Following code pulls the EOD data from NSE.
+				------------------pulls  data------------------ 
 """
 
 import datetime
