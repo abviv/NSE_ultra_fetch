@@ -1,0 +1,14 @@
+=======variant mars=====
+contains the code for pulling the data for particular dates
+
+In the data_pulling.py  changing the variable days_for_data_needed to the desired date you want the data to be fetched and processed.
+
+month variable at the start can be changed to get the data for the desired month 
+
+changing the days_for_data_needed and the month variable may be useful for fetching the specific date's data  
+
+
++++++++++    ****run hot vanilla first**** 
+and make sure both the flavour_mars_main.py an hot_vanilla are on the same folder++++++++++++
+
+
