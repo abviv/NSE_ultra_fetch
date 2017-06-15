@@ -15,6 +15,6 @@ WORKS GOOD WITH LINUX BASED SYS (INCLUDES MAC) AND CHANGING THE PATH NAMES IS NE
 
 ---Run hot vanilla first.
 
----Make sure both the flavour_mars_main.py an hot_vanilla.py are on the same folder
+---Make sure both the flavour_mars_main.py and hot_vanilla.py are on the same folder
 
 
