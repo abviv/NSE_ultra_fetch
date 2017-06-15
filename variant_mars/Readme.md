@@ -4,7 +4,7 @@
 
 ---Contains the code for pulling data on particular dates (partial automation).
 
----In the hot_vanilla.py, change the variable days_for_data_needed to the desired date, which fetches the data and processes it.
+---In the hot_vanilla.py, change the variable days_for_data_needed to the desired date, which fetches data and processes it.
 
 ---Month variable at the start can be changed to get the data for the desired month.
 
