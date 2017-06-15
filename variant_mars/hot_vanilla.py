@@ -1,9 +1,9 @@
-"""__main__production__code     Contains the sweet ordeal of licking the nectar   -->Pulls data from NSE(National Stock Exchange) for particular dates
+"""__main__production__code  Contains the sweet ordeal of licking the nectar-->Pulls data from NSE(National Stock Exchange) for particular dates
 	-->look into the readme doc to modify according to your usuage  -->dependency file is flavour_mars_main.py, look into that file for 
 	full complete manipulation to the file 
 
-					----------------------------pulls code---------------------------
-	 """  
+		----------------------------pulls code---------------------------
+"""  
 
 import datetime
 import time
@@ -25,14 +25,16 @@ global day
 #day=datetime.now().date().strftime ("%d")         #.strftime ("%Y%m%d") ###for fetching the current date and strips the needed 
 #month=datetime.now().date().strftime ("%m")
 
-month = 06    ###change to get the data for the desired month   
-list_of_months = ['unindex','JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']
-#print month
+###change to get the data for the desired month 
+month = 06    					#month=[06,05,04] for multiple months		  
+
+days_for_data_needed = [1,2,5,6,7,8,9,12,13]    ###change the list to get the data for the required date
+l
+ist_of_months = ['unindex','JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']
 month_in_words = list_of_months[int(month)]
-#print month_in_words
 
 def Bhav_Cpy(month_var,day_var):
-	month_temp = month_var            #str
+	month_temp = month_var           		  #str
 	day_temp = day_var				  #int
 	
 	def Bhav_Cpy_mental():
@@ -191,10 +193,10 @@ def Godzilla():
 		shutil.rmtree(directory_to_oi)
 		Groupping()	
 
-days_for_data_needed = [1,2,5,6,7,8,9,12,13]    ###change the list to get the data for the required date
+
 
 if __name__ == '__main__':
-	for i in days_for_data_needed:
+	for i in days_for_data_needed:		
 		day = i
 		Godzilla()
 		Bitch_Pls_Trigger()       				###fn from flavour_mars_main 
