@@ -29,7 +29,6 @@ global day
 month = 06    					#month=[06,05,04] for multiple months		  
 
 days_for_data_needed = [1,2,5,6,7,8,9,12,13]    ###change the list to get the data for the required date
-l
 ist_of_months = ['unindex','JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']
 month_in_words = list_of_months[int(month)]
 
@@ -68,7 +67,7 @@ def Bhav_Cpy(month_var,day_var):
 
 
 def Open_Interest(month_in_num_var,day_var):
-	month_temp = month_in_num_var     #int
+	month_temp = month_in_num_var    		  #int
 	day_temp = day_var				  #int
 	
 	def Open_Interest_mental():
@@ -103,7 +102,7 @@ def Open_Interest(month_in_num_var,day_var):
 
 
 def Volatility(month_var,day_var):
-	month_temp = month_var            #str
+	month_temp = month_var           		  #str
 	day_temp = day_var				  #int
 	
 	def Volatility_mental():
@@ -144,12 +143,8 @@ def Unzipper(unzip_directory):
 	###listdir is used to list the contents of a directory
 	onlyfiles = os.listdir(unzip_directory)
 	print (unzip_directory)
-	#print (onlyfiles)
 	for i in onlyfiles:
-	#if o.endswith(".zip"):
 		path_to_zipfile= unzip_directory + "/{}".format(i)
-		#print (path_to_zipfile)
-
 		###refer zipfile doc for more info about the underlying function
 		zip = zipfile.ZipFile(path_to_zipfile, 'r')
 		zip.extractall(unzip_directory)
@@ -158,14 +153,11 @@ def Unzipper(unzip_directory):
 def Full_Clean():
 
 	"""traverses through all the dir and cleans the unwanted files .zip and .xml extension"""
-	directory =[directory_to_bhav,directory_to_vol,directory_to_oi]  		#directory_to_bhav,directory_to_vol,
-	#print directory[0]
+	directory =[directory_to_bhav,directory_to_vol,directory_to_oi] 
 	for i in range(len(directory)):
 	    test = os.listdir( directory[i] )
-	    #print test
 	    removable_file = (".zip",".xml")
 	    for item in test:
-	        #print item
 	        if item.endswith(removable_file):
 	            os.remove(os.path.join(directory[i], item ))
 
@@ -173,7 +165,7 @@ def Groupping():
 	
 	###contains the link defn to all the proper flow  ****do not modify ****
 	
-	Bhav_Cpy(month_in_words,day)		#(month,day) ("str(first three letter of the month)",int)
+	Bhav_Cpy(month_in_words,day)			#(month,day) ("str(first three letter of the month)",int)
 	Unzipper (directory_to_bhav)
 	Open_Interest(month,day)			#(month,day) (int,int)
 	Unzipper(directory_to_oi)     
@@ -185,7 +177,7 @@ def Godzilla():
 
 	""" Good Godzilla, will help to debug and execute specific fns in the pgm, feel free to mess with the Godzilla """
 	if not os.path.exists(directory_to_bhav):
-			Groupping()
+		Groupping()
 
 	else:
 		shutil.rmtree(directory_to_bhav)
