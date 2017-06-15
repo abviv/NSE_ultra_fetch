@@ -18,7 +18,7 @@ PORTABILITY IN MIND AND FLEXIBLE USUAGE IN TERMS OF MEMORY.
 =======Running instructions=======
 
 
----Run princess_leia.py first, it contains all the link to the necessary files.
+---Run only the princess_leia.py, it contains all the link to the necessary files.
         
 ---Make sure both the .py files are on the same folder before knocking leia out.
 
