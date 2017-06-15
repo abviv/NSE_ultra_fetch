@@ -10,7 +10,6 @@ import shutil
 
 
 cwd=os.getcwd()
-#print cwd
 master_data = cwd + "/master_anubis_main.csv"
 directory_to_bhav = cwd + "/BHAV_CPY/"
 directory_to_oi = cwd + "/OI/"
@@ -27,7 +26,6 @@ def Csv_File_Creation_Report():
 
 			data = pd.read_csv(directory_to_vol+only_file[1][0],usecols=[0,1,2,6,8,12])	   
 			data = data.drop(data.index[[24,58,68,102,146,147,148,149,150,151,179]])
-			#print data
 
 			no_of_stocks = data.shape[:1]
 			Csv_File_Creation_Report.no_of_stocks = no_of_stocks    ###var to be used outside this  function
@@ -37,18 +35,15 @@ def Csv_File_Creation_Report():
 
 			name_of_stocks = name_of_stocks.ix[:,1]   		###cleaned stock names ranging from index 0-208
 			Csv_File_Creation_Report.name_of_stocks=name_of_stocks  ###var to be used outside the function
-			#print name_of_stocks
 
 			range_of_stocks = range(0,220)
 			list_of_stocks = (list(name_of_stocks))
-			#print list_of_stocks
 
 			Csv_File_Creation_Report.list_of_stocks = list_of_stocks
 
 			master_df = ['Date','Symbol','Underlying_close_price','Underlying_daily_volatility','Futures_close_price','Futures_daily_volatility','OI','OI_change','Futures_price_change','OI_fut&opt','OI_change_fut&opt']
 			empty_ = pd.DataFrame(index=range_of_stocks,columns=master_df)    ###used for the intial col name creation of csv
 
-			#empty_.to_csv(directory_to_report +'/1_daily_calc.csv',sep='\t', encoding='utf-8')
 			for i in range(0,209):
 					empty_.to_csv(directory_to_report +'/{}.csv'.format(list_of_stocks[i]),sep='\t', encoding='utf-8')
 	
@@ -59,14 +54,13 @@ def Csv_File_Creation_Report():
 	elif not os.path.exists(directory_to_report): 
 		print "Directory not found, creating new one ===>Csv_Calc defn"     				#debugger
 		os.mkdir(directory_to_report)
-		Csv_Calc()
-		#print len(list_of_stocks)		
+		Csv_Calc()		
 
 def Data_Processing():
 
 	only_file = [os.listdir(directory_to_bhav),os.listdir(directory_to_vol),os.listdir(directory_to_oi)]
 
-	data = pd.read_csv(directory_to_vol+only_file[1][0],usecols=[0,1,2,6,8,12])	   ###acts as a main df for reading the content and storing
+	data = pd.read_csv(directory_to_vol+only_file[1][0],usecols=[0,1,2,6,8,12])	 ###acts as a main df for reading the content and storing
 	data = data.drop(data.index[[24,58,68,102,146,147,148,149,150,151,179]])
 	
 	
@@ -74,12 +68,13 @@ def Data_Processing():
 		if i==0:
 			if os.path.exists(directory_to_bhav + only_file[i][0]): 			#debugger
 				print "Bhav file exists---------->"
+				print "processing {} the path".format(directory_to_bhav + only_file[i][0])
 				#print (directory_to_bhav + only_file[i][0]) #last index reads a different .csv file in that dir, first index for the array no(dont change it).
 
 				data_bhav  = pd.read_csv(directory_to_bhav + only_file[i][0],usecols=[1,10,12])
 				data_bhav_cpy = data_bhav.copy()
-				final_bhav = data_bhav_cpy.ix[42:668]			#original bhav contains that particular range of rows as desired one. If error found do check this range
-				final_bhav = final_bhav.reset_index()			#final_bhav and the new_df refers to the same DataFrame changed the df for better understanding and preserving the original
+				final_bhav = data_bhav_cpy.ix[42:668]		###original bhav contains that particular range of rows as desired one. If error found do check this range
+				final_bhav = final_bhav.reset_index()		###final_bhav and the new_df refers to the same DataFrame changed the df for better understanding and preserving the original
 				total_rows = final_bhav.shape[:1]
 				final_bhav = final_bhav.ix[:,1:4]
 				final_bhav["CONTRACTS_TOTAL"] = 0
@@ -95,19 +90,14 @@ def Data_Processing():
 						new_df = new_df.reset_index()
 						global newton
 						newton = new_df.ix[:,1:3]  #keep newton as a main df in the later part we can append the data to main_column
-						#newton["STOCK_NAME"] = Csv_File_Creation.name_of_stocks
-					#print (newton.head(20))
-					#print (newton.tail(10))			
-				
+					
 				Cross_Calc() 
 				   #intiate a processing and retun a df with cleaned and needed data
 			else:
-				print "Bhav file not exists"
+				print "Bhav file doesn't exist"
 				
-
 		elif i==1:
 			if os.path.exists(directory_to_vol + only_file[i][0]):
-				#data_vol=pd.read_csv(directory_to_vol + only_file[i][0])
 				print "vol file exists------------>"
 				print "processing {} the path".format(directory_to_vol + only_file[i][0])
 				data_temp = data
@@ -120,27 +110,20 @@ def Data_Processing():
 				global newton_cpy         
 				newton_cpy = newton             			###vale passing and chained merging of df from up else i==0
 				newton_cpy = newton_cpy.join(data_vol)
-
-				#print newton_cpy.head(124)
-				#print (directory_to_vol + only_file[i][0])
 			else:
-				print "vol file not exists"
+				print "vol file doesn't exist"
 		
-
 		elif i==2:
 			if os.path.exists(directory_to_oi+ only_file[i][0]):
 				data_oi = pd.read_csv(directory_to_oi + only_file[i][0])
-				print "oi file exists------------->"
-				print "processing {} the path".format(directory_to_oi + only_file[i][0])
+				print "Oi file exists------------->"
+				print "Processing {} the path".format(directory_to_oi + only_file[i][0])
 				
 				data_oi.columns = ['DATE','ISIN','SCRIP_NAME','NSE_SYMBOL','MWPL','OI_FUT_OPT']
 				data_oi = data_oi.sort_values(by=['NSE_SYMBOL'],ascending = [True])
 				data_oi = data_oi.loc[:,['DATE','NSE_SYMBOL','MWPL','OI_FUT_OPT']]  #column of interest
 				data_oi = data_oi.reset_index()
 				data_oi = data_oi.loc[:,['DATE','NSE_SYMBOL','MWPL','OI_FUT_OPT']]
-				#newton_cpy   #to prevent the destruction to the original df
-				#print newton_cpy.head()
-				#print data_oi.head()
 				data_oi = data_oi.join(newton_cpy)
 				global master_df_main
 				master_df_main = data_oi
@@ -149,17 +132,15 @@ def Data_Processing():
 				master_df_main['FUT_PRICE_CHANGE'] = 0
 				master_df_main['OI_CHANGE'] = 0
 				master_df_main['MWPL_CHANGE'] = 0
-				#Writing_Processed_Values()
-				#print master_df_main.head()
 			else:
-				print "oi file not exists"
+				print "Oi file doesn't exist"
 
 def Change_Calculator():
 
 	"""function which calculates the last 4 columns in the report """
 
 	if not os.path.exists(master_data):
-			print "Not existing------------>"
+		print "Not existing------------>"
 	else:
 		zerbra_data = pd.read_csv(master_data)
 		#print zerbra_data.ix[0,:]
@@ -175,7 +156,7 @@ def Change_Calculator():
 		master_df_main['OI_FUT_OPT_CHANGE'] = ((master_df_main.OI_FUT_OPT - zerbra_data.OI_FUT_OPT) / zerbra_data.OI_FUT_OPT) * 100
 
 
-def Writing_Processed_Values_new():         #gets executed for the first time
+def Writing_Processed_Values_new():      ###gets executed for the first time
 	sorted_files = sorted(os.listdir(directory_to_report))
 	
 	for i in range(0,209):
@@ -183,7 +164,7 @@ def Writing_Processed_Values_new():         #gets executed for the first time
 		master_df_main.iloc[[i]].to_csv(directory_to_report + sorted_files[i])
 		
 			
-def Writing_Processed_Values_old(): 		#get executed if files are present and for the second time
+def Writing_Processed_Values_old(): 	 ###gets executed if files are present and for the second time
 	sorted_files = sorted(os.listdir(directory_to_report))
 
 	for i in range(0,209):
