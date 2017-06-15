@@ -176,8 +176,8 @@ def Godzilla():
 
 ###SCHEDULER CALLS ALL THIS FUNCTION AT THE PREDEFINED TIME https://schedule.readthedocs.io/en/stable/
 
-schedule.every().monday.at("17:29").do(Godzilla)
-schedule.every().monday.at("17:30").do(Bitch_Pls_Trigger)
+schedule.every().monday.at("17:29").do(Godzilla)		###for Indian users change time to 19:29
+schedule.every().monday.at("17:30").do(Bitch_Pls_Trigger)	###for Indian users change time to 19:30 
 
 schedule.every().tuesday.at("17:29").do(Godzilla)
 schedule.every().tuesday.at("17:30").do(Bitch_Pls_Trigger)
