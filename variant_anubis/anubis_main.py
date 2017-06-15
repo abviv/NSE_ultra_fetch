@@ -1,5 +1,5 @@
-"""__main__production__code . Have a break and enjoy the automation..... Processes the pulled data.directory_to_bhav
-						-----------------cleaning, rinsing,washing and ironing-------------------  
+"""__main__production__code . Have a break and enjoy the automation..... Processes the pulled data.
+		-----------------cleaning, rinsing,washing and ironing-------------------  
 """
 
 import os
@@ -33,9 +33,9 @@ def Csv_File_Creation_Report():
 			Csv_File_Creation_Report.no_of_stocks = no_of_stocks    ###var to be used outside this  function
 			
 			name_of_stocks = data.ix[:,1]   
-			name_of_stocks = name_of_stocks.reset_index()			###preventing unwanted contamination
+			name_of_stocks = name_of_stocks.reset_index()		###preventing unwanted contamination
 
-			name_of_stocks = name_of_stocks.ix[:,1]   				###cleaned stock names ranging from index 0-208
+			name_of_stocks = name_of_stocks.ix[:,1]   		###cleaned stock names ranging from index 0-208
 			Csv_File_Creation_Report.name_of_stocks=name_of_stocks  ###var to be used outside the function
 			#print name_of_stocks
 
