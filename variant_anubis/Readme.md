@@ -12,7 +12,7 @@ PORTABILITY IN MIND AND FLEXIBLE USUAGE IN TERMS OF MEMORY.
 
 ---May create problems on saturdays and sundays since i haven't created an exception to deal with it {SOLVED}
 
----Threading and scheduling concepts are use which might cause some interference with the main thread {NOT FOUND}
+---Threading and scheduling concepts are in use which might cause some interference with the main thread {NOT FOUND}
 
 
 =======Running instructions=======
