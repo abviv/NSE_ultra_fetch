@@ -36,7 +36,7 @@ def Csv_File_Creation_Report():
 			name_of_stocks = name_of_stocks.ix[:,1]   		###cleaned stock names ranging from index 0-208
 			Csv_File_Creation_Report.name_of_stocks=name_of_stocks  ###var to be used outside the function
 
-			range_of_stocks = range(0,220)
+			range_of_stocks = range(0,220)				###221 is the index in Vol file
 			list_of_stocks = (list(name_of_stocks))
 
 			Csv_File_Creation_Report.list_of_stocks = list_of_stocks
