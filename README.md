@@ -8,5 +8,5 @@ Extracts the data --->Processes it---->Calculates on the data---->Spits out .csv
 
 Variant_anubis------------------> Complete automation
 
-.Variant_mars  ------------------> Partial automation
+Variant_mars  ------------------> Partial automation
 
