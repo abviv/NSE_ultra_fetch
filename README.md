@@ -7,5 +7,6 @@ VOLATILITY FILE. THE EXTRACTION AND PROCESSING IS DONE FOR STOCKS IN F&O.
 Extracts the data --->Processes it---->Calculates on the data---->Spits out .csv for Excel support and easy understanding.
 
 Variant_anubis------------------> Complete automation
+
 .Variant_mars  ------------------> Partial automation
 
