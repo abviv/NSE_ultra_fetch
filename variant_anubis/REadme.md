@@ -1,4 +1,4 @@
-#VARIANT ANUBIS
+# VARIANT ANUBIS
 
 WORKS GOOD WITH LINUX BASED SYS (INCLUDES MAC) AND CHANGING THE PATH NAMES IS NEEDED FOR WINDOWS SYS, CODE WAS CREATED WITH
 PORTABILITY IN MIND AND FLEXIBLE USUAGE IN TERMS OF MEMORY.
@@ -14,8 +14,7 @@ PORTABILITY IN MIND AND FLEXIBLE USUAGE IN TERMS OF MEMORY.
 
 ---Threading and scheduling concepts are in use which might cause some interference with the main thread {NOT FOUND}
 
-
-=======Running instructions=======
+# Running Instructions
 
 
 ---Run only the princess_leia.py, it contains all the link to the necessary files.
