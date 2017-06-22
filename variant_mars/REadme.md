@@ -1,7 +1,7 @@
+# VARIANT MARS
 
 WORKS GOOD WITH LINUX BASED SYS (INCLUDES MAC) AND CHANGING THE PATH NAMES IS NEEDED FOR WINDOWS SYS, CODE WAS CREATED WITH PORTABILITY IN MIND AND FLEXIBLE USUAGE IN TERMS OF MEMORY.
 
-=======VARIANT MARS=======
 
 ---Contains the code for pulling data on particular dates (partial automation).
 
@@ -11,7 +11,8 @@ WORKS GOOD WITH LINUX BASED SYS (INCLUDES MAC) AND CHANGING THE PATH NAMES IS NE
 
 ---Changing the days_for_data_needed and month variable may be useful for fetching the specific date's data.  
 
-=======RUNNING INSTRUCTIONS=======
+
+# Running Instructions
 
 ---Run only hot_vanilla.py file.
 
