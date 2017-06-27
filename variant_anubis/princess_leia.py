@@ -20,17 +20,7 @@ directory_to_bhav = file_path + '/BHAV_CPY/'
 directory_to_oi = file_path +'/OI/' 				
 directory_to_vol = file_path + '/VOLATILITY/'
 
-#day=datetime.now().date().strftime ("%d")         #.strftime ("%Y%m%d") ###for fetching the current date and strips the needed 
-#month=datetime.now().date().strftime ("%m")
-#print "current day--->" + day
-#print "current month->" + month
-
-
 list_of_months = ['unindex','JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']
-#print month
-#month_in_words = list_of_months[int(month)]
-#print "current month--->" + month_in_words
-
 
 def Bhav_Cpy(month_var,day_var):
 	month_temp = month_var          		  #str
