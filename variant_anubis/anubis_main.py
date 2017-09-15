@@ -205,7 +205,7 @@ def Sweet_Honey():
 		master_df_main.to_csv(cwd + "/master_anubis_main.csv")
 
 
-def Bitch_Pls_Trigger():
+def Do_Pls_Trigger():
 	if os.path.exists(directory_to_bhav):
 		Sweet_Honey()
 	else:
