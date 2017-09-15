@@ -190,10 +190,10 @@ def Godzilla():
 
 
 schedule.every().day.at("15:00").do(Godzilla)
-schedule.every().day.at("15:01").do(Bitch_Pls_Trigger)
+schedule.every().day.at("15:01").do(Do_Pls_Trigger)
 
 #schedule.every().wedensday.at("22:18").do(Godzilla)               
-#schedule.every().wednesday.at("22:19").do(Bitch_Pls_Trigger)	
+#schedule.every().wednesday.at("22:19").do(Do_Pls_Trigger)	
 
 
 ###DISABLE THIS TO STOP THE WHOLE PROGRAM
